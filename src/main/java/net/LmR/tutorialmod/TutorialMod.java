@@ -1,6 +1,7 @@
 package net.LmR.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.LmR.tutorialmod.item.ModCreativeModTabs;
 import net.LmR.tutorialmod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -28,6 +29,9 @@ public class TutorialMod
     public TutorialMod()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModCreativeModTabs.register(modEventBus);
+
         ModItems.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
